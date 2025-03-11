@@ -18,7 +18,7 @@ data = data.set_index("AREA_NAME")
 data = data.sort_index()
 
 
-data.to_csv("./data/1991/processed/language-by-region.csv")
+data.to_csv("./data/1991/processed/full-data.csv")
 
 REGION_NAME="ANDHRA PRADESH"
 region_data = data.loc[REGION_NAME].sort_values(ascending=False)
