@@ -29,7 +29,6 @@ for f_name in os.listdir('./data/2011/raw'):
     data = data.astype({"TOTAL_P": np.int64})
     data = data.set_index(["AREA_NAME", "LANGUAGE"])
 
-
     my_data = pd.concat([data, my_data])
     i += 1
 
@@ -50,7 +49,6 @@ for region in my_data["AREA_NAME"].unique():
         cols[language[0]] = language[1]
 
     final_df.loc[len(final_df)] = cols
-
 
 final_df = final_df.set_index("AREA_NAME").fillna(0).sort_index()
 print(final_df)
