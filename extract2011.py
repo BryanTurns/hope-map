@@ -51,6 +51,12 @@ for region in my_data["AREA_NAME"].unique():
     final_df.loc[len(final_df)] = cols
 
 final_df = final_df.set_index("AREA_NAME").fillna(0).sort_index()
+
+final_df["TOTAL"] = final_df.sum(axis=1)
+for col in final_df.columns:
+    if col == "TOTAL":
+        continue
+    final_df[f"{col}_P"] = final_df[col] / final_df["TOTAL"]
 print(final_df)
 final_df.to_csv("./data/2011/processed/full-data.csv")
 
