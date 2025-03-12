@@ -18,7 +18,7 @@ data["TOTAL"] = data.sum(axis=1)
 for col in data.columns:
     if col == "TOTAL":
         continue
-    data[f"{col}_P"] = data[col] / data["TOTAL"]
+    data[f"{col.strip()}_P"] = data[col] / data["TOTAL"]
 
 data.to_csv("./data/1991/processed/full-data.csv")
 

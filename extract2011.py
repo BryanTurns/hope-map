@@ -56,7 +56,7 @@ final_df["TOTAL"] = final_df.sum(axis=1)
 for col in final_df.columns:
     if col == "TOTAL":
         continue
-    final_df[f"{col}_P"] = final_df[col] / final_df["TOTAL"]
+    final_df[f"{col.strip()}_P"] = final_df[col] / final_df["TOTAL"]
 print(final_df)
 final_df.to_csv("./data/2011/processed/full-data.csv")
 
